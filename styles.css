@@ -1,0 +1,162 @@
+@font-face {
+    font-family: "Heraldic Shadows";
+    src:url("assets/heraldic-shadows/Heraldic_Shadows.otf") format("opentype");
+}
+
+:root {
+	--topnav-height: 150px;
+}
+h1 {
+	/* fixes issue with thingy , needs to be height of topnav */
+	/* +50 for nav (now that nav & flags are seperated) */
+	/*scroll-margin-top: var(--topnav-height) - 50px;*/
+	scroll-margin-top: 250px;
+	font-family: "Heraldic Shadows";
+}
+
+body {
+	font-family: "Heraldic Shadows", "PT Sans", Calibri, Tahoma, sans-serif;
+	margin: 0;
+	/*height: 100vh;*/ /* can't use with sticky */
+	background: linear-gradient(to right, #011167 33.33%, #ffffff 33.33% 66.66%, #EE9E23 66.66%);
+	/*background-image: url("./flag.webp");*/
+}
+
+.languages {
+	position: absolute;
+	float: right;
+	z-index: 20;
+	top: 0px;
+	right: 0px;
+}
+
+.content {
+	margin: 10em;
+	margin-top: 0;
+	color: grey;
+}
+
+.mix {
+	mix-blend-mode: difference;
+}
+
+.title {
+	font-size: 150px;
+	text-align: center;
+}
+
+
+.anthem {
+	position: absolute;
+	float: right;
+	top: 0px; 
+	right: 150px
+}
+
+.topflag {
+	height: var(--topnav-height);
+	background-image: url("./assets/flag.webp"), linear-gradient(to bottom, #011167 33.33%, #ffffff 33.33% 66.66%, #EE9E23 66.66%);
+	background-repeat: space;
+	background-size: contain;
+	position: sticky;
+	top: 0;
+	z-index: 10; /* to show above content when using mix-blend-mode */
+}
+
+.topnav {
+	/*height: var(--topnav-height);*/
+	position: sticky;
+	/*position: -webkit-sticky;*/
+	display: block;
+	top: var(--topnav-height);
+	
+	background: linear-gradient(to right, #011167 33.33%, #ffffff 33.33% 66.66%, #EE9E23 66.66%); 
+	/*background: linear-gradient(to bottom, #011167 33.33%, #ffffff 33.33% 66.66%, #EE9E23 66.66%);*/
+	/*overflow: hidden;*/
+	/*background-image: url("./assets/flag.webp"), linear-gradient(to bottom, #011167 33.33%, #ffffff 33.33% 66.66%, #EE9E23 66.66%);
+	background-repeat: space;
+	background-size: contain;*/
+	z-index: 10; /* to show above content when using mix-blend-mode */
+
+	display: flex;
+	justify-content: center;
+}
+
+.nav {
+	/* centering title bar */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width:50%;
+}
+
+/* Style the links inside the navigation bar */
+.nav a {
+	/*color: #f2f2f2;*/
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+	flex: 1;
+}
+
+.nav a:nth-child(1) {
+	background-color:  #011167;
+}
+
+.nav a:nth-child(2) {
+	background-color:  #ffffff;
+}
+
+.nav a:nth-child(3) {
+	background-color:  #EE9E23;
+}
+
+/* Change the color of links on hover */
+.nav a:hover {
+	color: #ddd;
+	/*color: black;*/
+}
+
+#pass {
+	mix-blend-mode:unset;
+	background: white;
+	color: black;
+	border-color: black;
+	border-width: 5px;
+	border-radius: 1em;
+	padding: 1em;
+}
+
+
+/* carousel */
+.carousel {
+	overflow-x: scroll;               /* Enables horizontal scrolling */
+	scroll-snap-type: x mandatory;    /* Activates snapping on the x-axis */
+	-webkit-overflow-scrolling: touch;/* Provides momentum scrolling on iOS */
+	width: 100%;
+	max-width: 500px;
+	margin: auto;
+	border: 2px solid #ccc;
+	border-radius: 10px;
+}
+
+.carousel-track {
+	display: flex;
+	/* Ensure each item sits side-by-side */
+}
+
+.carousel-item {
+	flex: 0 0 100%;                   /* Each slide takes up 100% of the container width */
+	scroll-snap-align: start;         /* Each slide will snap to the start of the container */
+	/*background: #eee;*/
+	text-align: center;
+	font-size: 2em;
+	padding: 60px 0;
+	border-right: 1px solid #ccc;      /* Optional: visual separation */
+}
+
+/* Remove the extra border on the last slide */
+.carousel-item:last-child {
+	border-right: none;
+}

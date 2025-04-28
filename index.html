@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Elbonia</title>
+		<link rel="icon" type="image/x-icon" href="./assets/flag.webp">
+		<link rel="stylesheet" href="styles.css">
+		<!-- PDF -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.0/jspdf.umd.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3/dist/jspdf.plugin.autotable.min.js"></script>
+		<!-- data scripts for translations & news 'articles' -->
+		<script src="t9n.js"></script>
+		<!-- main script -->
+		<script src="script.js"></script>
+	</head>
+	<body>
+		<div class = "topflag"></div>
+		<div class = "topnav">
+			<div class = "nav">
+				<a data-t9n = "home" href="#home">Home</a>
+				<a data-t9n = "news" href="#news">News</a>
+				<a data-t9n = "pass" href="#pass">Passport</a>
+			</div>
+			<div class = "languages">
+				<button id = "en" value = "en" onclick="changeLanguage('en')">EN</button>
+				<button id = "fr" value = "fr" onclick="changeLanguage('fr')">FR</button>
+				<button id = "de" value = "de" onclick="changeLanguage('de')">DE</button>
+				<button id = "it" value = "it" onclick="changeLanguage('it')">IT</button>
+			</div>
+			<input title = "Toggle Anthem" class = "anthem" type="image" src = "assets/trumpet.jpg" height = 50 onclick="toggleMusic()"/>
+			<audio id="anthem" style="display:none;" controls autoplay loop>
+				<source type="audio/mpeg" src="assets/anthem.mpeg">
+			</audio>
+		</div>
+
+		<div id="content" class="content">
+			<h1 class = "mix title">Elbonia</h1>
+
+			<h1 id = "home" data-t9n = "home">Home</h1>
+
+			<div class = "mix" stlye="padding:25em;">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a nisl vitae lectus porttitor vehicula. Nam placerat enim ut porta viverra. Nulla sollicitudin varius turpis, semper iaculis augue vulputate vitae. Cras at aliquam tortor. Praesent metus nunc, pharetra et ullamcorper aliquam, interdum id justo. Sed massa ligula, dignissim a auctor sit amet, sollicitudin ut neque. Donec quis rutrum ex, eget varius lacus. Nam mollis accumsan enim sed fermentum. Suspendisse potenti.
+	
+	Ut volutpat tempor nibh. Integer egestas, quam eget euismod porttitor, nisl neque consectetur quam, nec pulvinar dui quam non nisi. Nam porta congue consectetur. Integer ac convallis velit. Quisque egestas risus non lacus hendrerit scelerisque. Fusce eget egestas erat. Nam varius libero eget elit euismod, eget bibendum nulla tempor. Pellentesque eleifend nunc purus, sed sodales nisl convallis et. Nulla mattis nunc sed imperdiet iaculis. Pellentesque quis molestie dolor. Fusce dolor mauris, rhoncus ac enim non, hendrerit lobortis turpis. Etiam sit amet efficitur odio, ac pulvinar justo. Suspendisse suscipit turpis ac est congue, a dignissim turpis tempus.
+	
+	Donec in turpis et metus ornare porttitor. Nam varius purus molestie placerat laoreet. Maecenas sed tortor convallis, pulvinar enim sit amet, porta nulla. Pellentesque vel imperdiet ipsum. Sed sed porttitor dui. Vivamus aliquam in metus vitae dapibus. Suspendisse nunc purus, lacinia quis nibh a, feugiat vulputate lorem. Cras lobortis, mi viverra luctus maximus, lacus tellus rhoncus elit, nec porttitor justo nisl eget odio. Integer at lacinia nisi. Etiam vel accumsan dolor, vel blandit urna.
+	
+	Integer ullamcorper lectus id mi ultricies posuere. Aliquam mattis congue tortor, convallis tempor leo lobortis id. Sed magna metus, dapibus vel convallis id, posuere non eros. Pellentesque laoreet tellus nec nisi auctor fermentum. Proin id ipsum vel enim hendrerit dignissim nec quis magna. Pellentesque in nibh nec lacus venenatis molestie. Quisque quis nunc a est varius malesuada sed in orci. Nunc tincidunt, nisl ac rhoncus rutrum, quam turpis accumsan orci, pharetra porttitor tellus magna at nisl. Integer in auctor ante. Pellentesque in dui molestie, cursus urna quis, dignissim velit. Quisque lobortis luctus turpis, vitae elementum mi rutrum in. Integer porttitor maximus lorem, vitae hendrerit massa accumsan non. Praesent non lorem tempor, lobortis diam vehicula, ultricies orci. Maecenas lorem nisl, mollis a posuere nec, iaculis eu risus. Suspendisse nulla ex, eleifend nec mattis sit amet, tristique nec urna. Sed varius rutrum erat, in convallis tellus rutrum sed.
+	
+	Sed a nisi lobortis, posuere turpis vitae, ornare libero. Fusce viverra, turpis nec fermentum venenatis, tellus dui pulvinar dolor, quis mattis libero mi faucibus odio. Mauris quis nulla sit amet lectus porttitor convallis a a ligula. Donec vel ullamcorper justo, eu egestas libero. Proin blandit tellus eu lorem malesuada, in condimentum odio euismod. Vestibulum luctus arcu felis, non feugiat mauris tincidunt vitae. In nec odio pretium, pulvinar turpis in, iaculis arcu. Ut quis tincidunt lacus. Nam sodales vel diam sit amet consequat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+			</div>
+
+			<div id = "news">
+				<h1 data-t9n = "news">News</h1>
+				
+				<div class="carousel">
+					<div class="carousel-track"></div>
+				</div>
+				<div class="carousel-dots"></div>
+			</div>
+	
+			<div id="pass">
+				<h1 data-t9n = "pass">Passport</h1>
+				<p data-t9n = "passdscr">
+					Are you a proud Elbonian?
+					Do you want to prove it?
+		
+					Then have your Elbonian passport issued today!*
+					Just fill out the form below:
+				</p>
+				<form action="javascript:save()">
+					<label data-t9n = "sex" for="sex">Choose your sex:</label>
+					<select name="sex" id="sex">
+						<option value="m">M</option>
+						<option value="f">F</option>
+					</select><br><br>
+					<label data-t9n = "fname" for="fname">First name:</label>
+					<input type="text" id="fname" name="fname"><br><br>
+					<label data-t9n = "lname" for="lname">Last name:</label>
+					<input type="text" id="lname" name="lname"><br><br>
+					<input data-t9n = "submit" type="submit" value="Submit">
+				</form>
+				
+				* this is not a legal document
+			</div>
+		</div>
+	</body>
+</html>
