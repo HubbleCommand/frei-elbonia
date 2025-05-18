@@ -52,16 +52,3 @@ function fillNews() {
 		carousel.appendChild(div)
 	});
 }
-
-// <!-- Passport PDF Generator -->
-const countryCode = "ELB"
-
-function save() {
-	var doc = new jspdf.jsPDF({
-		unit: "mm",
-		format: [125, 90]
-	});
-	doc.text("Hello world!", 10, 10);
-	doc.save("passport.pdf");
-}
-

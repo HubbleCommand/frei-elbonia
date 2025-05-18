@@ -7,6 +7,7 @@ const translations = {
 
 		passdscr: "Are you a proud Elbonian? \n Do you want to prove it? \nThen have your Elbonian passport issued today!* \n Just fill out the form below:",
 		sex: "Sex",
+		bdate: "Birth Date",
 		fname: "First name",
 		lname: "Last name",
 		submit: "Submit",
@@ -21,6 +22,7 @@ const translations = {
 		sex: "Genre",
 		fname: "Prénom",
 		lname: "Nom",
+		bdate: "Date de naissance",
 		submit: "Soumettre",
 	},
 	"de": {
@@ -31,6 +33,7 @@ const translations = {
 		sex: "Genre",
 		fname: "Vorname",
 		lname: "Name",
+		bdate: "Geburtsdatum",
 		submit: "Vorlegen",
 	},
 	"it": {
@@ -41,6 +44,7 @@ const translations = {
 		sex: "Sesso",
 		fname: "Nome",
 		lname: "Nome",
+		bdate: "Data di nascita",
 		submit: "Invia",
 	}
 }
